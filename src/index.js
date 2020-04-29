@@ -7,6 +7,9 @@ import {
   updateQuery,
   deleteQuery
 } from './queries';
+import {HasuraApiError} from './errors';
+
+export {HasuraApiError};
 
 const DEFAULT_PRIMARY_KEY = 'id';
 
@@ -209,7 +212,7 @@ export default (serverEndpoint, httpClient, config) => {
   const convertHTTPResponse = (response, type, resource, params) => {
     // handle errors and throw with the message
     if ('error' in response || 'code' in response) {
-      throw new Error(JSON.stringify(response));
+      throw new HasuraApiError(response);
     }
     const primaryKey = getPrimaryKey(resource);
 
