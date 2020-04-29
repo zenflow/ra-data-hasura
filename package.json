@@ -1,8 +1,8 @@
 {
   "name": "@zen_flow/ra-data-hasura",
-  "version": "0.0.8",
+  "version": "0.0.8-zenflow-1",
   "description": "react-admin data provider for Hasura GraphQL Engine",
-  "main": "lib/ra-data-hasura.min.js",
+  "main": "lib/@zen_flow/ra-data-hasura.min.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
